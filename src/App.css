@@ -1,13 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  height:100%;
+}
+html #root,
+  body #root {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  html #root .minesweeper,
+  body #root .minesweeper {
+    display: flex;
+    flex-direction: column;
+    height: 592px; }
 
 .minesweeper{
   margin: 0 auto;
   width:500px;
   height:600px;
-  border: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .board {
   width:500px;
   height:500px;
   border: 1px solid black;
+  font-family: sans-serif;
+  border-bottom: none; 
 }
+
+.board-head {
+  display: flex;
+  flex-direction: row;
+  width:500px;
+  height:50px;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+}
+
+.reset, .flagCount, .timer {
+  width: 35px;
+  height:35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reset{
+  background-image: url("./assets/smiley1.ico");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color:transparent; 
+  border-color:transparent;
+  width: 25px;
+  height:25px;
+}
+ .row {
+  display: flex;
+  height: 50px;
+}
+.row:last-child {
+  border-bottom: none;
+  height: 50px; 
+}
+.row .cell {
+    border-right: 1px solid #444;
+    width: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #444; 
+}
+.row .cell.open {
+  background-color: #d4d4d4; }
+  .row .cell.open:hover {
+    background-color: #d4d4d4; }
+    .row .cell:hover {
+      background-color: #eeeeee; }
+      .row .cell:last-child {
+        border-right: none; }

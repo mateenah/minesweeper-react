@@ -4,20 +4,21 @@ const BoardHead = props => {
     //adding timer
     let minutes = Math.floor(props.timer / 60);
     let seconds = props.timer - minutes * 60 || 0;
-    let formattedSec = 0;
+    
        if(seconds<10){
-        let formattedSec = `0${seconds}`
+        var formattedSec = `0${seconds}`
        }else{
-        let formattedSec = seconds;
+        var formattedSec = seconds;
        }
+    //let formattedSec = seconds < 10 ? `0${seconds}` : seconds;
     let time = `${minutes}:${formattedSec}`;
 
-    //let formattedSec = seconds < 10 ? `0${seconds}` : seconds;
+    
     return (
     <div className="board-head">
-        <div className="timer">
-        {time}
-        </div>
+        <div className="flagCount">{props.flagCount}</div>
+        <button className="reset"></button>
+        <div className="timer">{time}</div>
     </div>);
  
 };

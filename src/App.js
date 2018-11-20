@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
        <div className="minesweeper">
-          <BoardHead timer={this.state.timer} flags={this.state.flag}/>
+          <BoardHead timer={this.state.timer} flagCount={this.state.flags}/>
           <Board rows={this.state.rows} columns={this.state.columns} mines={this.state.mines}/>
       </div>
       </div>
