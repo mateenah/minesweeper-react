@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Board from './components/BoardHead/board';
+import Board from './components/Board/board';
+import BoardHead from './components/BoardHead/boardHead';
 import './App.css';
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     rows:10,
     columns:10,
     flags: 10,
+    timer:0,
     mines: 10
   }
 
@@ -15,7 +17,8 @@ class App extends Component {
     return (
       <div className="App">
        <div className="minesweeper">
-       <Board rows={this.state.rows} columns={this.state.columns} mines={this.state.mines}/>
+          <BoardHead timer={this.state.timer} flags={this.state.flag}/>
+          <Board rows={this.state.rows} columns={this.state.columns} mines={this.state.mines}/>
       </div>
       </div>
     );

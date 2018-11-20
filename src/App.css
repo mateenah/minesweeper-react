@@ -2,6 +2,12 @@
 .minesweeper{
   margin: 0 auto;
   width:500px;
+  height:600px;
+  border: 1px solid black;
+}
+
+.board {
+  width:500px;
   height:500px;
   border: 1px solid black;
 }

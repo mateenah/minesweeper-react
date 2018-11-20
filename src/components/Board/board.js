@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Row from "../Row/row";
 class Board extends Component {
 
     constructor(props){
@@ -45,9 +45,19 @@ class Board extends Component {
         return board;
    };
     render(){
-        return(
-            <div className="board">
+        let rows = this.state.rows.map((cells, index) => (
+            <Row
+              cells={cells}
+              open={this.open}
+              flag={this.flag}
+              key={index}
+            />
+          ));
 
+        return(
+
+            <div className="board">
+                {rows}
             </div>
         );
     }
