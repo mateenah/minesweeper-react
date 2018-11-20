@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Board from './components/BoardHead/board';
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    rows:10,
+    columns:10,
+    flags: 10,
+    mines: 10
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+       <div className="minesweeper">
+       <Board rows={this.state.rows} columns={this.state.columns} mines={this.state.mines}/>
+      </div>
       </div>
     );
   }
