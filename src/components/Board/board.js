@@ -44,6 +44,40 @@ class Board extends Component {
         console.table(board);
         return board;
    };
+
+   open = cell => {
+      let row = this.state.rows;
+
+      let current = row[cell.y][cell.x];
+
+        if(current.hasMine && this.props.openCells === 0){
+            console.log("cell has mine");
+            let newRows = this.createBoard(this.props);
+            this.setState({
+                rows: newRows
+            }, () =>{
+                this.open(cell);
+            })
+        } else {
+            if(!cell.hasFlag && !current.isOpen){
+                this.props.openCellClick();
+                current.isOpen = true;
+            }
+        }
+   };
+
+   findMines = cell => {
+    let minesInProximity = 0;
+    // looking for mines in a each cell block around the chosen cell
+    for (let row = -1; row <= 1; row++) {
+        for (let col = -1; col <= 1; col++) {
+            
+        }
+    }
+
+   };
+
+
     render(){
         let rows = this.state.rows.map((cells, index) => (
             <Row
